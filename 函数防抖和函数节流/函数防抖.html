@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="user_input">
+<button id="btn">搜索</button>
+<script type="text/javascript">
+    let inputNode = document.querySelector('#user_input')
+    let id;
+    inputNode.addEventListener('keyup', function () {
+        let value = inputNode.value;
+        clearTimeout(id)
+        id = setTimeout(() => {
+            sendAjax(value);
+        }, 300)
+    })
+
+    function sendAjax(data) {
+        console.log(`发送了一次Ajax请求,内容为${data}`);
+    }
+</script>
+</body>
+</html>
